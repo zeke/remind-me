@@ -1,0 +1,45 @@
+{
+  "name": "remind-me",
+  "version": "1.0.0",
+  "description": "A command-line reminder tool that supports natural language dates and times, inspired by Slack's remind feature",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "bin": {
+    "remind": "./",
+    "remind-me": "./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeke/remind-me.git"
+  },
+  "keywords": [
+    "calendar",
+    "date",
+    "time",
+    "reminders",
+    "gtd",
+    "slack"
+  ],
+  "author": "zeke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeke/remind-me/issues"
+  },
+  "homepage": "https://github.com/zeke/remind-me#readme",
+  "dependencies": {
+    "chrono-node": "^1.0.6",
+    "dateparser": "^1.0.6",
+    "easypattern": "0.0.2",
+    "extract-values": "^0.1.2",
+    "moment-natural": "0.0.2",
+    "node-chrono": "0.0.3",
+    "prettydate": "0.0.1",
+    "relative-date": "^1.1.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "standard": "^5.1.1"
+  }
+}

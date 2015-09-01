@@ -1,0 +1,4 @@
+Usage:
+
+remind me at 3pm to wash the dishes
+remind me on friday at 9pm to go party

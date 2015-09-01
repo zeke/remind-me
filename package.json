@@ -32,9 +32,6 @@
     "chrono-node": "^1.0.6",
     "dateparser": "^1.0.6",
     "easypattern": "0.0.2",
-    "extract-values": "^0.1.2",
-    "moment-natural": "0.0.2",
-    "node-chrono": "0.0.3",
     "prettydate": "0.0.1",
     "relative-date": "^1.1.2"
   },

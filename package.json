@@ -4,7 +4,9 @@
   "description": "A command-line reminder tool that supports natural language dates and times, inspired by Slack's remind feature",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cron": "node ./lib/cron.js",
+    "postinstall": "npm run cron"
   },
   "bin": {
     "remind": "./",
@@ -28,6 +30,7 @@
   "homepage": "https://github.com/zeke/remind-me#readme",
   "dependencies": {
     "chrono-node": "^1.0.6",
+    "crontab": "^1.1.0",
     "dateparser": "^1.0.6",
     "easypattern": "0.0.2",
     "prettydate": "0.0.1",

@@ -10,10 +10,8 @@
     "remind": "./",
     "remind-me": "./"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zeke/remind-me.git"
-  },
+  "preferGlobal": true,
+  "repository": "github:zeke/remind-me",
   "keywords": [
     "calendar",
     "date",

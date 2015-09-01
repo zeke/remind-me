@@ -1,4 +1,5 @@
 Usage:
-
+remind me in two hours to take a break
 remind me at 3pm to wash the dishes
+remind me to get out of bed tomorrow
 remind me on friday at 9pm to go party

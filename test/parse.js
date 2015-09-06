@@ -5,7 +5,6 @@ const assert = require('assert')
 const relative = require('dateparser').parse
 
 describe('parse', function () {
-
   describe('relative times', function () {
     it('in 2 hours', function () {
       var _ = parse('me in 2 hours to go to bed')
@@ -71,7 +70,7 @@ describe('parse', function () {
 
     it('tomorrow (trailing)', function () {
       var _ = parse('remind me to wake up tomorrow')
-      tomorrowDate = (new Date()).getDate()+1
+      var tomorrowDate = (new Date()).getDate() + 1
       if (tomorrowDate > 31) tomorrowDate = 1
       assert.equal(_.time.getDate(), tomorrowDate)
       assert.equal(_.time.getHours(), 12)
@@ -81,9 +80,8 @@ describe('parse', function () {
 
   })
 
-  describe('defaults', function() {
-
-    it('defaults to 12pm if day is specified but time is not', function() {
+  describe('defaults', function () {
+    it('defaults to 12pm if day is specified but time is not', function () {
       var _ = parse('remind me thursday to do something')
       assert.equal(_.time.getHours(), 12)
       assert.equal(_.task, 'do something')

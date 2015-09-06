@@ -6,11 +6,11 @@ const strftime = require('prettydate').strftime
 const relative = require('dateparser').parse
 
 describe('Reminder', function () {
-  var reminder = new Reminder('boil some eggs', new Date())
+  var reminder = new Reminder('to boil some eggs in five minutes')
 
   it('has a task and a time', function () {
     assert.equal(reminder.task, 'boil some eggs')
-    assert.equal(typeof reminder.time, 'object')
+    assert.equal(typeof reminder.time, 'number')
   })
 
   it('has a unique ID', function () {
@@ -28,9 +28,9 @@ describe('Reminder', function () {
   })
 
   describe('imminent', function () {
-    var old = new Reminder('do stuff', +new Date() - relative('3 days').value)
-    var soon = new Reminder('do stuff', +new Date() + relative('59 seconds').value)
-    var future = new Reminder('do stuff', +new Date() + relative('61 seconds').value)
+    var old = new Reminder('to do stuff in 1 second')
+    var soon = new Reminder('to do stuff in 30 seconds')
+    var future = new Reminder('to do stuff in 90 seconds')
 
     it('is immininent when `time` is in the past or less than a minute in the future', function () {
       assert(old.imminent)

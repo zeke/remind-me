@@ -28,15 +28,15 @@ describe('Store', function () {
 
     it('adds to the reminders array', function() {
       store = new Store(tmpDir().name)
-      store.add(new Reminder('test all the things', new Date()))
+      store.add(new Reminder('to test all the things in 1 second'))
       assert.equal(store.reminders.length, 1)
     })
 
     it('saves the JSON file', function() {
       var dir = tmpDir().name
       store = new Store(dir)
-      store.add(new Reminder('test all the things', new Date()))
-      store.add(new Reminder('test even moar', new Date()))
+      store.add(new Reminder('to test all the things in two days'))
+      store.add(new Reminder('to test moar things in three days'))
       assert.equal(store.reminders.length, 2)
 
       store = new Store(dir)
@@ -47,14 +47,11 @@ describe('Store', function () {
 
   describe('sweep', function(){
 
-
-
-
     it('finds all imminent reminders and calls the notify method on each', function() {
       store = new Store(tmpDir().name)
-      store.add(new Reminder('do stuff', +new Date() - relative('3 days').value))
-      store.add(new Reminder('do stuff', +new Date() + relative('59 seconds').value))
-      store.add(new Reminder('do stuff', +new Date() + relative('61 seconds').value))
+      store.add(new Reminder('to do stuff in 1 second'))
+      store.add(new Reminder('to do stuff in 30 seconds'))
+      store.add(new Reminder('to do stuff in 90 seconds'))
 
       assert.equal(store.reminders.length, 3)
       assert.equal(store.reminders.filter(function(_){return _.imminent}).length, 2)

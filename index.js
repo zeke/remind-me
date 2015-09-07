@@ -5,6 +5,7 @@ const exec = require('child_process').execSync
 
 const usage = fs.readFileSync(__dirname + '/lib/usage.txt', 'utf8')
 const Store = require(__dirname + '/lib/store')
+const Config = require(__dirname + '/lib/config')
 const Reminder = require(__dirname + '/lib/reminder')
 const args = process.argv.slice(2)
 
@@ -15,30 +16,30 @@ if (!args.length) {
 
 const action = args[0]
 
+var store = new Store()
+var config = new Config()
+
 switch (action) {
   case 'sweep':
     exec('echo I am here to sweep')
-    var store = new Store()
     store.sweep()
     break
   case 'me':
-    var store = new Store()
     var reminder = new Reminder(args.join(' '))
     store.add(reminder)
     console.log(reminder.creationReply)
     break
   case 'list':
+    console.log(store.list())
     exec(`echo I am not implemented yet`)
     break
   case 'cancel':
     exec(`echo I am not implemented yet`)
     break
   case 'edit':
-    var store = new Store()
     exec(`$EDITOR ${store.file}`)
     break
   case 'config':
-    var config = new Config()
     exec(`$EDITOR ${config.file}`)
     break
   default:

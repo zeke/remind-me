@@ -46,12 +46,12 @@ describe('Store', function () {
   })
 
   describe('sweep', function(){
-
+    this.timeout(10000)
     it('finds all imminent reminders and calls the notify method on each', function() {
       store = new Store(tmpDir().name)
-      store.add(new Reminder('to do stuff in 1 second'))
-      store.add(new Reminder('to do stuff in 30 seconds'))
-      store.add(new Reminder('to do stuff in 90 seconds'))
+      store.add(new Reminder('to one in 1 second'))
+      store.add(new Reminder('to two in 30 seconds'))
+      store.add(new Reminder('to take a deep breath in 90 seconds'))
 
       assert.equal(store.reminders.length, 3)
       assert.equal(store.reminders.filter(function(_){return _.imminent}).length, 2)

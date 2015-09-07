@@ -1,5 +1,29 @@
-Usage:
-remind me in two hours to take a break
-remind me at 3pm to wash the dishes
-remind me to get out of bed tomorrow
-remind me on friday at 9pm to go party
+remind me
+// create a reminder
+
+    // Patterns
+    remind me to {task} at {time}
+    remind me to {task} in {interval}
+    remind me in {interval} to {task}
+    remind me on {time} to {task}
+    remind me at {time} to {task}
+    remind me {time} to {task}
+    remind me to {task} tomorrow
+
+    // Examples
+    remind me in two hours to take a break
+    remind me at 3pm to wash the dishes
+    remind me to get out of bed tomorrow
+    remind me on friday at 9pm to go party
+
+remind list
+// list all upcoming reminders and their times
+
+remind cancel <id>
+// delete a reminder by specifying its id
+
+remind edit
+// open reminders.json in your $EDITOR
+
+remind config
+// open config.json in your $EDITOR

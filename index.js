@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
+const exec = require('child_process').execSync
 
 const usage = fs.readFileSync(__dirname + '/lib/usage.txt', 'utf8')
 const Store = require(__dirname + '/lib/store')
@@ -16,7 +17,7 @@ const action = args[0]
 
 switch (action) {
   case 'sweep':
-    require('child_process').execSync('echo I am here to sweep')
+    exec('echo I am here to sweep')
     var store = new Store()
     store.sweep()
     break
@@ -24,11 +25,21 @@ switch (action) {
     var store = new Store()
     var reminder = new Reminder(args.join(' '))
     store.add(reminder)
-    console.log(reminder.summary)
+    console.log(reminder.creationReply)
+    break
+  case 'list':
+    exec(`echo I am not implemented yet`)
+    break
+  case 'cancel':
+    exec(`echo I am not implemented yet`)
     break
   case 'edit':
     var store = new Store()
-    require('child_process').execSync(`$EDITOR ${store.file}`)
+    exec(`$EDITOR ${store.file}`)
+    break
+  case 'config':
+    var config = new Config()
+    exec(`$EDITOR ${config.file}`)
     break
   default:
     console.log(`Unrecognized command "${action}"\n`)

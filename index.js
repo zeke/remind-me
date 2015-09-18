@@ -21,6 +21,7 @@ var config = new Config()
 
 switch (action) {
   case 'sweep':
+    exec('say I am here to sweep')
     exec('echo I am here to sweep')
     store.sweep()
     break

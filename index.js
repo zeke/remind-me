@@ -5,7 +5,6 @@ const exec = require('child_process').execSync
 
 const usage = fs.readFileSync(__dirname + '/lib/usage.txt', 'utf8')
 const Store = require(__dirname + '/lib/store')
-const Config = require(__dirname + '/lib/config')
 const Reminder = require(__dirname + '/lib/reminder')
 const args = process.argv.slice(2)
 
@@ -17,7 +16,6 @@ if (!args.length) {
 const action = args[0]
 
 var store = new Store()
-var config = new Config()
 
 switch (action) {
   case 'sweep':
@@ -32,16 +30,15 @@ switch (action) {
     break
   case 'list':
     console.log(store.list())
-    exec(`echo I am not implemented yet`)
     break
   case 'cancel':
     exec(`echo I am not implemented yet`)
     break
   case 'edit':
-    exec(`$EDITOR ${store.file}`)
+    exec(`$EDITOR ~/.remind-me/reminders.json`)
     break
   case 'config':
-    exec(`$EDITOR ${config.file}`)
+    exec(`$EDITOR ~/.remind-me/config.json`)
     break
   default:
     console.log(`Unrecognized command "${action}"\n`)

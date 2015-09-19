@@ -1,0 +1,22 @@
+{
+  "desktop": {
+    "enabled": true
+  },
+  "say": {
+    "enabled": true,
+    "voice": "Samantha"
+  },
+  "twilio": {
+    "enabled": false,
+    "accountSID": "",
+    "authToken": "",
+    "fromPhoneNumber": "+13334445555",
+    "toPhoneNumber":  "+6667778888"
+  },
+  "slack": {
+    "enabled": false,
+    "hookURL": "",
+    "channel": "",
+    "username": ""
+  }
+}

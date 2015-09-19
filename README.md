@@ -2,16 +2,57 @@
 
 **This is alpha software! Not fully working yet.**
 
-A command-line reminder tool that supports natural language dates and times, inspired by Slack&#39;s remind feature
+A command-line reminder tool that supports natural language dates and times, inspired by Slack's `/remind` feature.
 
 ## Installation
 
-Download node at [nodejs.org](http://nodejs.org) and install it, if you haven't already.
-
 ```sh
-npm install remind-me --save
+npm i -g remind-me
 ```
 
+## Usage
+
+**remind me**
+
+Create a reminder.
+
+```
+remind me in two hours to take a break
+remind me to do some deep breathing in 10 minutes
+remind me at 3pm to wash the dishes
+remind me to wash the dishes at 4:00 pm tomorrow
+remind me to get out of bed tomorrow
+remind me to put on pants at 8:36 am tomorrow
+remind me on friday at 9pm to go party
+remind me on February 2 at 6:30am to look for my shadow
+```
+
+**remind list**
+
+List all upcoming reminders and their times
+
+**remind cancel <id>**
+
+Delete a reminder by specifying its id.
+
+**remind edit**
+
+Open `~/.remind-me/reminders.json` in your `$EDITOR`
+
+**remind config**
+
+Open `~/.remind-me/config.json` in your `$EDITOR`
+
+## Notifications
+
+There are currently four ways you can be reminded:
+
+- The Mac OS X `say` command, which reads your reminder aloud to you in a computerized voice. Enabled by default.
+- Desktop Notifications. Enabled by default.
+- SMS with Twilio. Disabled by default. Requires configuration.
+- Slack notification. Disabled by default. Requires configuration.
+
+To configure notifications, type `remind config` to open `~./remind-me/config.json` in your `$EDITOR`.
 
 ## Tests
 

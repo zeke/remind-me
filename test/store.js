@@ -3,6 +3,8 @@
 const Store = require('../lib/store')
 const Reminder = require('../lib/reminder')
 const tmpDir = require('tmp').dirSync
+const fs = require('fs')
+const path = require('path')
 const assert = require('assert')
 const rimraf = require('rimraf').sync
 const relative = require('dateparser').parse
@@ -12,11 +14,14 @@ var store
 describe('Store', function () {
 
   beforeEach(function(){
-    store = new Store(tmpDir().name)
+    process.env.REMIND_STORE_PATH = path.resolve(tmpDir().name, './reminders.json')
+    fs.writeFileSync(process.env.REMIND_STORE_PATH, '[]')
+    store = new Store()
   })
 
   afterEach(function(){
-    rimraf(store.dir)
+    rimraf(path.dirname(store.file))
+    delete process.env.REMIND_STORE_PATH
   })
 
   it('is an empty array', function() {

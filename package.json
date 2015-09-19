@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "add-to-crontab": "node ./lib/cron.js",
-    "postinstall": "npm run add-to-crontab"
+    "cron": "node ./lib/cron.js",
+    "setup": "node ./lib/setup.js",
+    "teardown": "node ./lib/teardown.js",
+    "postinstall": "npm run setup",
+    "postuninstall": "npm run teardown"
   },
   "bin": {
     "remind": "./index.js",
@@ -30,6 +33,7 @@
   "homepage": "https://github.com/zeke/remind-me#readme",
   "dependencies": {
     "chrono-node": "^1.0.6",
+    "cp": "^0.2.0",
     "crontab": "^1.1.0",
     "dateparser": "^1.0.6",
     "easypattern": "0.0.2",

@@ -2,6 +2,11 @@
 
 A command-line reminder tool that supports natural language dates and times, inspired by Slack's `/remind` feature.
 
+```
+$ remind me to go outside for some fresh air in five minutes
+# Ok, I'll remind you to "go outside for some fresh air" on Sunday, September 20 at 4:05 pm
+```
+
 ## Installation
 
 This module uses some newer JavaScript features, so you'll need iojs or node >=4 installed to use it.
@@ -29,19 +34,15 @@ remind me on friday at 9pm to go party
 remind me on February 2 at 6:30am to look for my shadow
 ```
 
-**remind list**
+#### remind list
 
 List all upcoming reminders and their times
 
-**remind cancel <id>**
-
-Delete a reminder by specifying its id.
-
-**remind edit**
+#### remind edit
 
 Open `~/.remind-me/reminders.json` in your `$EDITOR`
 
-**remind config**
+#### remind config
 
 Open `~/.remind-me/config.json` in your `$EDITOR`
 
@@ -49,23 +50,23 @@ Open `~/.remind-me/config.json` in your `$EDITOR`
 
 The following notifiers are supported. To enable or disable any of them, type `remind config`.
 
-### `say`
+#### `say`
 
 The Mac OS X [say](http://www.maclife.com/article/columns/terminal_101_making_your_mac_talk_%E2%80%9Csay%E2%80%9D) command is enabled by default. This reads your reminder aloud in a computer voice. You can customize the voice. The full list is available by typing `say -v "?"` in your terminal.
 
 Enabled by default.
 
-### Desktop Notifications
+#### Desktop Notifications
 
 This display reminders using your OS's built-in notification system. This notifier uses the popular and well-maintained [node-notifier](https://github.com/mikaelbr/node-notifier#readme) module.
 
 Enabled by default.
 
-### Text Messages with Twilio
+#### Text Messages with Twilio
 
 Send reminders to your phone as text messages using Twilio. You can sign up for a free account which will work but prepends a nag message to all your texts, or you can pay for texts for a nominal fee. To find your Twilio phone number, visit  https://www.twilio.com/user/account/phone-numbers/incoming. To find your Twilio SID and token, visit https://www.twilio.com/user/account/settings
 
-### Slack
+#### Slack
 
 Send messages to a Slack channel. Uses the [node-slack](https://github.com/xoxco/node-slack) module.
 

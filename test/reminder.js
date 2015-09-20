@@ -1,12 +1,23 @@
 /* globals describe, it */
 
-const Reminder = require('../lib/reminder')
+const path = require('path')
 const assert = require('assert')
 const strftime = require('prettydate').strftime
 const relative = require('dateparser').parse
 
+process.env.REMIND_CONFIG_PATH = path.resolve('./lib/default-config')
+const Reminder = require('../lib/reminder')
+var reminder
+
 describe('Reminder', function () {
-  var reminder = new Reminder('to boil some eggs in five minutes')
+
+  beforeEach(function(){
+    reminder = new Reminder('to boil some eggs in five minutes')
+  })
+
+  afterEach(function(){
+    reminder = null
+  })
 
   it('has a task and a time', function () {
     assert.equal(reminder.task, 'boil some eggs')

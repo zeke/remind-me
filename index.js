@@ -19,8 +19,6 @@ var store = new Store()
 
 switch (action) {
   case 'sweep':
-    exec('say I am here to sweep')
-    exec('echo I am here to sweep')
     store.sweep()
     break
   case 'me':
@@ -32,7 +30,8 @@ switch (action) {
     console.log(store.list())
     break
   case 'cancel':
-    exec(`echo I am not implemented yet`)
+    console.log('I am not implemented yet.')
+    console.log('In the interim, use `remind edit` to remove the reminder manually')
     break
   case 'edit':
     exec(`$EDITOR ~/.remind-me/reminders.json`)

@@ -19,7 +19,7 @@ npm i -g remind-me && remind
 
 ## Usage
 
-**remind me**
+#### $ remind me
 
 Create a reminder.
 
@@ -34,15 +34,15 @@ remind me on friday at 9pm to go party
 remind me on February 2 at 6:30am to look for my shadow
 ```
 
-#### remind list
+#### $ remind list
 
 List all upcoming reminders and their times
 
-#### remind edit
+#### $ remind edit
 
 Open `~/.remind-me/reminders.json` in your `$EDITOR`
 
-#### remind config
+#### $ remind config
 
 Open `~/.remind-me/config.json` in your `$EDITOR`
 

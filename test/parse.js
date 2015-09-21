@@ -80,6 +80,17 @@ describe('parse', function () {
 
   })
 
+  describe('unrecognizable formats', function () {
+    it('handles curbevalls', function () {
+      assert.throws(
+        function() {
+          parse('remind me to throw a curveball')
+        },
+        /unrecognized pattern: remind me to throw a curveball/
+      );
+    })
+  })
+
   describe('defaults', function () {
     it('defaults to 12pm if day is specified but time is not', function () {
       var _ = parse('remind me thursday to do something')

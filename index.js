@@ -22,7 +22,8 @@ switch (action) {
     store.sweep()
     break
   case 'me':
-    var reminder = new Reminder(args.join(' '))
+    var input = args.reverse().concat('remind').reverse().join(' ')
+    var reminder = new Reminder(input)
     store.add(reminder)
     console.log(reminder.creationReply)
     break

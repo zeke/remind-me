@@ -32,26 +32,26 @@
   },
   "homepage": "https://github.com/zeke/remind-me#readme",
   "dependencies": {
-    "chrono-node": "^1.0.6",
-    "cp": "^0.2.0",
-    "crontab": "^1.1.0",
-    "dateparser": "^1.0.6",
+    "chrono-node": "1.0.8",
+    "cp": "0.2.0",
+    "crontab": "1.1.0",
+    "dateparser": "1.0.6",
     "easypattern": "0.0.2",
     "gh-issue-url": "0.0.2",
-    "mkdirp": "^0.5.1",
-    "node-notifier": "^4.2.3",
+    "mkdirp": "0.5.1",
+    "node-notifier": "4.3.1",
     "node-slack": "0.0.7",
     "open": "0.0.5",
     "prettydate": "0.0.1",
-    "require-dir": "^0.3.0",
-    "rimraf": "^2.4.3",
+    "require-dir": "0.3.0",
+    "rimraf": "2.4.3",
     "tmp": "0.0.27",
-    "twilio": "^2.3.0",
-    "user-home": "^2.0.0",
-    "uuid": "^2.0.1"
+    "twilio": "2.4.0",
+    "user-home": "2.0.0",
+    "uuid": "2.0.1"
   },
   "devDependencies": {
-    "mocha": "^2.2.5",
-    "standard": "^5.1.1"
+    "mocha": "2.3.3",
+    "standard": "5.3.1"
   }
 }

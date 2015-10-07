@@ -99,11 +99,22 @@ describe('parse', function () {
       let _ = parse('remind me to wake up tomorrow')
       var tomorrowDate = (new Date()).getDate() + 1
       if (tomorrowDate > 31) tomorrowDate = 1
-      // assert.equal(_.time.getDate(), tomorrowDate)
+      assert.equal(_.time.getDate(), tomorrowDate)
       assert.equal(_.time.getHours(), 12)
       assert.equal(_.time.getMinutes(), 0)
       assert.equal(_.task, 'wake up')
     })
+
+    it('remind me to {task} tomorrow at {time}')//, function () {
+    //   let _ = parse('remind me to call mom tomorrow at 8')
+    //   var tomorrowDate = (new Date()).getDate() + 1
+    //   if (tomorrowDate > 31) tomorrowDate = 1
+    //   assert.equal(_.time.getDate(), tomorrowDate)
+    //   assert.equal(_.time.getHours(), 8)
+    //   assert.equal(_.time.getMinutes(), 0)
+    //   assert.equal(_.task, 'call mom')
+    // })
+
 
   })
 

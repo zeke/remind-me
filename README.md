@@ -81,7 +81,7 @@ npm test
 
 ## Dependencies
 
-- [chrono-node](https://github.com/berryboy/chrono): A natural language date parser in Javascript
+- [chrono-node](https://github.com/wanasit/chrono): A natural language date parser in Javascript
 - [cp](https://github.com/stephenmathieson/node-cp): cp for node
 - [crontab](https://github.com/dachev/node-crontab): A module for reading, creating, deleting, manipulating, and saving system cronjobs with node.js
 - [dateparser](https://github.com/jhaynie/dateparser): A human language relative date parser
@@ -95,7 +95,7 @@ npm test
 - [tmp](https://github.com/raszi/node-tmp): Temporary file and directory creator
 - [twilio](https://github.com/git+https:/): A Twilio helper library
 - [user-home](https://github.com/git+https:/): Get the path to the user home directory
-- [uuid](https://github.com/shtylman/node-uuid): Rigorous implementation of RFC4122 (v1 and v4) UUIDs.
+- [uuid](https://github.com/defunctzombie/node-uuid): Rigorous implementation of RFC4122 (v1 and v4) UUIDs.
 
 ## Dev Dependencies
 

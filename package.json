@@ -51,7 +51,7 @@
     "uuid": "2.0.1"
   },
   "devDependencies": {
-    "mocha": "2.3.4",
+    "mocha": "2.4.3",
     "standard": "5.3.1"
   }
 }

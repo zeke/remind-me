@@ -44,7 +44,7 @@
     "open": "0.0.5",
     "prettydate": "0.0.1",
     "require-dir": "0.3.0",
-    "rimraf": "2.4.3",
+    "rimraf": "2.5.2",
     "tmp": "0.0.27",
     "twilio": "2.5.1",
     "user-home": "2.0.0",

@@ -21,7 +21,7 @@ describe('Reminder', function () {
 
   it('has a task and a time', function () {
     assert.equal(reminder.task, 'boil some eggs')
-    assert.equal(typeof reminder.time, 'number')
+    assert(reminder.time instanceof Date)
   })
 
   it('has a unique ID', function () {

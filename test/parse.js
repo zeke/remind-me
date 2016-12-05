@@ -80,10 +80,20 @@ describe('parse', function () {
       assert.equal(_.task, 'cancel something')
     })
 
+    it('remind me at {timeWithHourOnly} to {task}', function() {
+      let _ = parse('remind me at 9 to go golfing')
+      assert(_.time > Date.now())
+      assert((_.time.getHours() == 9) || (_.time.getHours() == 21))
+    })
+
     it('remind me {weekday} to {task}', function () {
-      let _ = parse('remind me friday to prepare for the weekend')
-      assert.equal(_.time.getDay(), 5)
-      assert.equal(_.task, 'prepare for the weekend')
+      var dow = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday',
+        'friday', 'saturday'];
+      for (var i = 0; i < dow.length; i++) {
+        let _ = parse('remind me ' + dow[i] + ' to prepare for the weekend')
+        assert.equal(_.time.getDay(), i)
+        assert.equal(_.task, 'prepare for the weekend')
+      }
     })
 
     it('remind me on {date} at {time} to {task}', function () {
